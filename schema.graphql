@@ -1,0 +1,3049 @@
+# THIS IS AN AUTO-GENERATED FILE. NO EDIT REQUIRED.
+input AccountAddressInput {
+  mailingAddress: AddressInput
+  permanentAddress: AddressInput
+}
+
+input AccountBankInput {
+  foreignBank: [BankInput]
+  localBank: [BankInput]
+}
+
+type AccountBankResponse {
+  foreignBank: [BankResponse]
+  localBank: [BankResponse]
+}
+
+input AccountContactDetailsInput {
+  contactNumber: [AccountPhoneInput]
+  emailAddress: String
+}
+
+input AccountCrsInput {
+  taxResident: String
+  tin: [TinInfoInput]
+}
+
+input AccountDeclarationInput {
+  crs: AccountCrsInput
+  fatca: AccountFatcaInput
+  fea: AccountFeaInput
+}
+
+input AccountEmploymentDetailsInput {
+  address: SubAddressInput
+  businessNature: String
+  city: String
+  country: String
+  employerName: String
+  occupation: String
+  postCode: String
+  state: String
+}
+
+input AccountEmploymentDetailsJointInput {
+  address: SubAddressInput
+  businessNature: String
+  city: String
+  country: String
+  employerName: String
+  grossIncome: String
+  occupation: String
+  postCode: String
+  state: String
+}
+
+input AccountEpfDetailsInput {
+  epfAccountType: String
+  epfMemberNumber: String
+}
+
+input AccountFatcaInput {
+  certificate: FileBase64Input
+  confirmAddress: String
+  formW8Ben: String
+  formW9: String
+  noCertificate: String
+  reason: String
+  usBorn: String
+  usCitizen: String
+}
+
+input AccountFeaInput {
+  balance: String
+  borrowingFacility: String
+  resident: String
+}
+
+type AccountHolding {
+  currency: String
+  currentValue: String
+  floatingUnits: String
+  fundId: Int
+  fundName: String
+  investmentAmount: String
+  navUnits: String
+  newSales: Boolean
+  pl: String
+  plPercentage: String
+  redeemableFund: Boolean
+  switchOut: Boolean
+  topUpSales: Boolean
+  units: String
+}
+
+input AccountInput {
+  addressInformation: AccountAddressInput
+  bankSummary: AccountBankInput
+  clientId: String
+  contactDetails: AccountContactDetailsInput
+  declaration: AccountDeclarationInput
+  employmentDetails: AccountEmploymentDetailsInput
+  epfDetails: AccountEpfDetailsInput
+  isEtb: Boolean
+  personalDetails: PDetailInfoInput
+}
+
+input AccountInputTransactions {
+  bankSummary: AccountBankInput
+}
+
+type AccountInvestmentDetails {
+  distributionInstruction: String
+  fundClass: String
+  fundCode: String
+  fundCurrency: String
+  fundId: String
+  fundIssuer: String
+  fundName: String
+  fundType: String
+  fundingOption: String
+  investmentAmount: String
+  isEpf: Boolean
+  isFea: Boolean
+  isScheduled: Boolean
+  isSyariah: Boolean
+  isTopup: Boolean
+  landingFund: String
+  salesCharge: String
+  scheduledInvestmentAmount: String
+  scheduledSalesCharge: String
+}
+
+type AccountInvestmentDetailsRedemption {
+  availableUnits: String
+  currency: String
+  distributionInstruction: String
+  exitFee: String
+  fundAbbr: String
+  fundCategory: String
+  fundClass: String
+  fundCode: String
+  fundCurrency: String
+  fundId: String
+  fundIssuer: String
+  fundName: String
+  fundProcessingGroup: String
+  fundType: String
+  fundingOption: String
+  isEpf: String
+  isSyariah: String
+  redeemAmount: String
+  units: String
+}
+
+type AccountInvestmentDetailsSwitching {
+  availableUnits: String
+  distributionInstruction: String
+  fundCategory: String
+  fundClass: String
+  fundCurrency: String
+  fundType: String
+  fundingOption: String
+  isEpf: String
+  switchInDetails: [SwitchInResponse]
+  switchOutFundAbbr: String
+  switchOutFundCode: String
+  switchOutFundId: String
+  switchOutFundIssuer: String
+  switchOutFundName: String
+  switchOutFundProcessingGroup: String
+  switchOutIsSyariah: String
+  switchOutUnits: String
+}
+
+type AccountInvestmentRes {
+  grandTotal: [OrderAmountCurrency]
+  grandTotalRecurring: OrderAmountCurrency
+  orders: [AccountOrder]
+}
+
+input AccountJointInput {
+  addressInformation: AccountAddressInput
+  clientId: String
+  contactDetails: AccountContactDetailsInput
+  declaration: AccountDeclarationInput
+  employmentDetails: AccountEmploymentDetailsJointInput
+  isEtb: Boolean
+  personalDetails: PDetailInfoInput
+}
+
+type AccountOrder {
+  allowedRecurringType: [String]
+  investments: [AccountInvestmentDetails]
+  orderDate: String
+  orderNumber: String
+  orderTotalAmount: [OrderAmountCurrency]
+  paymentType: String
+}
+
+type AccountOrderRedemption {
+  grandTotalAmount: [OrderAmountCurrencyForRedemption]
+  grandTotalUnits: String
+  investments: [AccountInvestmentDetailsRedemption]
+  orderDate: String
+  orderNumber: String
+}
+
+type AccountOrderSwitching {
+  grandTotal: String
+  investments: [AccountInvestmentDetailsSwitching]
+  orderDate: String
+  orderNumber: String
+}
+
+input AccountPhoneInput {
+  code: String
+  label: String
+  value: String
+}
+
+type AccountSummary {
+  accountNumber: [String]
+  accountType: String
+  advisorCode: String
+  advisorName: String
+  bdmName: String
+  distributionInstruction: String
+  fundType: String
+  fundingOption: String
+  operatingMode: String
+  registrationDate: String
+  status: String
+}
+
+type AccountsData {
+  accountNumber: String
+  accountType: String
+  date: String
+  name: String
+}
+
+type Activate {
+  data: CommonResult
+  error: Error
+}
+
+input ActivateInput {
+  username: String
+  verifyCode: String
+}
+
+type Address {
+  address: String
+  city: String
+  country: String
+  postCode: String
+  state: String
+}
+
+type AddressDetails {
+  address: SubAddress
+  city: String
+  country: String
+  postCode: String
+  state: String
+}
+
+type AddressInformation {
+  mailingAddress: AddressDetails
+  permanentAddress: AddressDetails
+}
+
+input AddressInput {
+  address: SubAddressInput
+  city: String
+  country: String
+  postCode: String
+  state: String
+}
+
+type AgentDashboard {
+  data: AgentDashboardResult
+  error: Error
+}
+
+type AgentDashboardResponse {
+  approvedCount: Int
+  filters: AgentFilters
+  incompleteCount: Int
+  orders: [TXDetailsV2]
+  page: Int
+  pages: Int
+  pendingCount: Int
+  rejectedCount: Int
+  rerouteCount: Int
+  submittedCount: Int
+  totalResultCount: Int
+}
+
+type AgentDashboardResult {
+  result: AgentDashboardResponse
+}
+
+type AgentDetails {
+  address: Address
+  agency: String
+  agentCode: String
+  agentId: String
+  agentName: String
+  bdmEmail: String
+  bdmName: String
+  branchName: String
+  channel: String
+  email: String
+  licenseCode: String
+  mobileNo: String
+  nric: String
+  omniEnabled: String
+  rank: String
+  region: String
+  status: String
+}
+
+type AgentFilters {
+  accountType: [String]
+  agentStatus: [String]
+  transactionType: [String]
+}
+
+type AgentLogin {
+  data: JWTResult
+  error: Error
+}
+
+type AgentProfile {
+  data: AgentProfileResult
+  error: Error
+}
+
+type AgentProfileResult {
+  result: AgentDetails
+}
+
+type AgentRegistration {
+  data: CommonResult
+  error: Error
+}
+
+type AmlaRemark {
+  remark: String
+  title: String
+}
+
+type AmlaTitle {
+  status: String
+  time: String
+  user: String
+}
+
+input Assessment {
+  questionEight: Int
+  questionFive: Int
+  questionFour: Int
+  questionNine: Int
+  questionSeven: Int
+  questionSix: Int
+  questionThree: Int
+  questionTwo: Int
+}
+
+type BankDetails {
+  bankAccountName: String
+  bankAccountNumber: String
+  bankLocation: String
+  bankName: String
+  bankSwiftCode: String
+  currency: [String]
+  id: Int
+}
+
+type BankInfoDto {
+  bankAccountName: String
+  bankAccountNumber: String
+  bankLocation: String
+  bankName: String
+  bankSwiftCode: String
+  bankType: String
+  currency: [String]
+  id: Int
+  isCombined: Boolean
+  utaId: String
+}
+
+input BankInfoDtoInput {
+  bankAccountName: String
+  bankAccountNumber: String
+  bankLocation: String
+  bankName: String
+  bankSwiftCode: String
+  bankType: String
+  currency: [String]
+  id: Int
+  isCombined: Boolean
+  utaId: String
+}
+
+type BankInfoDtoResult {
+  data: BankInfoResult
+  error: Error
+}
+
+input BankInfoInput {
+  accountNo: String
+  foreignBank: [BankInfoDtoInput]
+  localBank: [BankInfoDtoInput]
+}
+
+type BankInfoResponse {
+  foreignBank: [BankInfoDto]
+  localBank: [BankInfoDto]
+}
+
+type BankInfoResult {
+  result: BankInfoResponse
+}
+
+input BankInput {
+  bankAccountName: String
+  bankAccountNumber: String
+  bankLocation: String
+  bankName: String
+  bankSwiftCode: String
+  currency: [String]
+  isNewBank: Boolean
+}
+
+type BankResponse {
+  bankAccountName: String
+  bankAccountNumber: String
+  bankLocation: String
+  bankName: String
+  bankSwiftCode: String
+  currency: [String]
+  isNewBank: Boolean
+}
+
+type BankTypes {
+  foreignBank: [BankDetails]
+  localBank: [BankDetails]
+}
+
+type BranchOption {
+  branchId: Int
+  name: String
+}
+
+type Case {
+  accountNo: String
+  caseId: String
+  caseNo: String
+  clientId: String
+  clientName: String
+  closeDate: String
+  createdOn: String
+  daysRemaining: String
+  isSeen: Boolean
+  lastUpdated: String
+  remark: [Reasons]
+  status: String
+  targetDate: String
+}
+
+input CaseResponseInput {
+  caseId: String
+  isReroute: String
+}
+
+type CaseResponseMain {
+  client: EddClient
+  response: [CaseResponseRes]
+}
+
+type CaseResponseOutput {
+  data: CaseResponseResult
+  error: Error
+}
+
+type CaseResponseRes {
+  agent: AmlaTitle
+  amla: AmlaTitle
+  amlaRemark: String
+  client: EddClient
+  count: Int
+  data: [EddData]
+  questions: [EddDataQuestion]
+}
+
+type CaseResponseResult {
+  result: CaseResponseMain
+}
+
+type CaseV2 {
+  accountNo: String
+  caseId: String
+  caseNo: String
+  clientId: String
+  clientName: String
+  closeDate: String
+  createdOn: String
+  daysRemaining: String
+  isSeen: Boolean
+  label: String
+  lastUpdated: String
+  remark: [Reasons]
+  rerouteReason: [AmlaRemark]
+  status: String
+  targetDate: String
+}
+
+type CashEpf {
+  cash: CashEpfResult
+  epf: CashEpfResult
+}
+
+type CashEpfResult {
+  max: String
+  maximum: String
+  min: String
+  minimum: String
+}
+
+type ChangePassword {
+  data: CommonResult
+  error: Error
+}
+
+input ChangePasswordInput {
+  confirmPassword: String
+  password: String
+}
+
+input ChangePasswordInputV2 {
+  confirmPassword: String
+  currentPassword: String
+  password: String
+}
+
+input CheckPasswordInput {
+  password: String
+}
+
+input ClienInfoInput {
+  contactDetails: AccountContactDetailsInput
+  declaration: AccountDeclarationInput
+}
+
+type ClientDetails {
+  bumiputera: String
+  countryOfBirth: String
+  dateOfBirth: String
+  educationLevel: String
+  expirationDate: String
+  gender: String
+  maritalStatus: String
+  monthlyHouseholdIncome: String
+  mothersMaidenName: String
+  nationality: String
+  placeOfBirth: String
+  race: String
+  relationship: String
+  riskProfile: String
+  salutation: String
+}
+
+type ClientProfile {
+  addressInformation: AddressInformation
+  bankInformation: BankTypes
+  clientId: String
+  contactDetails: ContactDetails
+  declaration: DeclarationList
+  employmentInformation: EmploymentDetails
+  epfDetails: EpfDetails
+  idNumber: String
+  idType: String
+  isEtb: Boolean
+  name: String
+  personalDetails: ClientDetails
+  uploadedDocument: [FileBase64]
+}
+
+type ClientProfileOutput {
+  data: ClientProfileResult
+  error: Error
+}
+
+type ClientProfileRes {
+  profile: EddClientProfile
+}
+
+type ClientProfileResult {
+  result: ClientProfileRes
+}
+
+type ClientRegisterHolderInfo {
+  clientId: String
+  dateOfBirth: String
+  id: String
+  idType: String
+  name: String
+}
+
+input ClientRegisterHolderInput {
+  dateOfBirth: String
+  id: String
+  idType: String
+  name: String
+}
+
+input ClientRegisterInput {
+  accountNo: String
+  accountType: String
+  isEtb: Boolean
+  isEtbTransactions: Boolean
+  jointHolder: ClientRegisterHolderInput
+  principalHolder: ClientRegisterHolderInput
+}
+
+type ClientRegisterOutput {
+  data: ClientRegisterResponse
+  error: Error
+}
+
+type ClientRegisterResponse {
+  result: ClientRegisterResult
+}
+
+type ClientRegisterResult {
+  initId: Int
+  jointHolder: ClientRegisterHolderInfo
+  message: String
+  principalHolder: ClientRegisterHolderInfo
+  riskInfo: ClientRisk
+}
+
+type ClientRisk {
+  appetite: String
+  expectedRange: String
+  hnwStatus: String
+  profile: String
+  type: String
+}
+
+input CommonEmail {
+  email: String
+}
+
+input CommonOtpInput {
+  code: Int
+  email: String
+}
+
+type CommonOutput {
+  data: CommonResult
+  error: Error
+}
+
+type CommonResponse {
+  message: String
+  status: Boolean
+}
+
+type CommonResult {
+  result: CommonResponse
+}
+
+type ContactDetails {
+  email: String
+  faxNumber: String
+  homeNumber: String
+  mobileNumber: String
+  officeNumber: String
+}
+
+type CrsDeclaration {
+  taxResident: String
+  tin: [TinInfo]
+}
+
+input CtaSummary {
+  ctaNumber: String
+  name: String
+}
+
+type CtaSummaryResponse {
+  ctaNumber: String
+  name: String
+}
+
+input CustomResultInput {
+  column: String
+  value: String
+}
+
+type Dashboard {
+  data: DashboardResponse
+  error: Error
+}
+
+input DashboardInput {
+  filter: [CustomResultInput]
+  hardcopyFilter: Boolean
+  isTermsAgreed: Boolean
+  page: String
+  search: String
+  sort: [CustomResultInput]
+  tab: String
+}
+
+type DashboardOrderDetails {
+  accountType: String
+  canProceed: Boolean
+  clientId: String
+  createdOn: String
+  dueDate: String
+  investorName: InvestorNamesDashboard
+  isScheduled: Boolean
+  jointId: String
+  lastUpdated: String
+  orderNumber: String
+  remark: [Reasons]
+  status: String
+  totalInvestment: [OrderAmountCurrency]
+  transactionType: String
+  withHardcopy: Boolean
+}
+
+type DashboardReason {
+  content: [String]
+  documents: [DocumentsToSubmit]
+  isSubmitted: Boolean
+  title: String
+}
+
+type DashboardResponse {
+  result: DashboardResult
+}
+
+type DashboardResult {
+  approvedCount: Int
+  orders: [DashboardOrderDetails]
+  page: Int
+  pages: Int
+  pendingCount: Int
+  rejectedCount: Int
+  totalResultCount: Int
+}
+
+type DdaFpxInfo {
+  bankAccountName: String
+  bankAccountNumber: String
+  frequency: String
+  recurringBank: String
+}
+
+type DeclarationList {
+  crs: CrsDeclaration
+  fatca: FatcaDeclaration
+  fea: FeaDeclaration
+}
+
+type DocRemark {
+  remarks: [String]
+  title: String
+}
+
+type DocSummaryMessage {
+  docList: [HardcopyDoc]
+  orderNumber: String
+  remarks: [String]
+  status: String
+  txRef: String
+}
+
+type DocSummaryMessageSoftCopy {
+  docList: [SoftCopyDoc]
+  orderNumber: String
+  remarks: [String]
+  status: String
+  txRef: String
+}
+
+type DocumentList {
+  documents: [DocumentMetadata]
+  mainHeader: String
+  subHeader: String
+}
+
+type DocumentMetadata {
+  label: String
+  name: String
+  title: String
+  type: String
+  url: String
+}
+
+type DocumentResponse {
+  base64: String
+  name: String
+}
+
+type DocumentResult {
+  result: [DocumentResponse]
+}
+
+type DocumentS3Response {
+  name: String
+  url: String
+}
+
+type DocumentSummary {
+  accountType: String
+  hardcopy: HardcopyDetails
+  softcopy: SoftcopyDetails
+}
+
+type DocumentsToSubmit {
+  count: Int
+  document: String
+}
+
+input EachUploadDoc {
+  docs: [UploadDocumentFile]
+  name: String
+}
+
+input EddAnswer {
+  answers: String
+  question: String
+}
+
+type EddClient {
+  name: String
+  status: String
+}
+
+type EddClientProfile {
+  accountType: String
+  client: ClientProfile
+  createdAt: String
+  incomeDistribution: String
+  signatory: String
+}
+
+input EddCommonInput {
+  caseId: String
+}
+
+type EddDashboard {
+  data: EddDashboardResult
+  error: Error
+}
+
+type EddDashboardResponse {
+  cases: [Case]
+  historyCount: Int
+  newCount: Int
+  page: Int
+  pages: Int
+  pendingCount: Int
+  reroutedCount: Int
+  submittedCount: Int
+}
+
+type EddDashboardResult {
+  result: EddDashboardResponse
+}
+
+type EddDashboardV2 {
+  data: EddDashboardV2Result
+  error: Error
+}
+
+type EddDashboardV2Response {
+  cases: [CaseV2]
+  historyCount: Int
+  newCount: Int
+  page: Int
+  pages: Int
+  pendingCount: Int
+  reroutedCount: Int
+  submittedCount: Int
+}
+
+type EddDashboardV2Result {
+  result: EddDashboardV2Response
+}
+
+type EddData {
+  amlaRemark: String
+  answers: String
+  description: String
+  question: String
+  questionId: Int
+}
+
+type EddDataQuestion {
+  amlaRemark: EddQuestionOption
+  answers: String
+  description: String
+  question: String
+  questionId: Int
+}
+
+type EddFormatOption {
+  limit: Int
+  type: String
+}
+
+type EddQuestion {
+  description: String
+  id: String
+  options: [EddQuestionOption]
+  title: String
+}
+
+type EddQuestionOption {
+  autoHide: Boolean
+  description: String
+  format: EddFormatOption
+  hasDoc: Boolean
+  hasRemark: Boolean
+  id: String
+  info: String
+  multiSelection: Boolean
+  options: [EddQuestionOption]
+  parent: [String]
+  title: String
+  type: String
+  values: [String]
+  valuesDescription: [String]
+}
+
+type EddQuestions {
+  additionalQuestions: [EddQuestion]
+  amlaTitle: AmlaTitle
+  questions: [EddQuestion]
+}
+
+input EmailOtpVerificationInput {
+  clientId: String
+  id: String
+  initId: String
+  isForceUpdate: Boolean
+  jointHolder: CommonOtpInput
+  principalHolder: CommonOtpInput
+}
+
+input EmailVerificationInput {
+  clientId: String
+  id: String
+  initId: String
+  isForceUpdate: Boolean
+  jointHolder: CommonEmail
+  principalHolder: CommonEmail
+}
+
+type EmploymentDetails {
+  address: AddressDetails
+  annualIncome: String
+  nameOfEmployer: String
+  natureOfBusiness: String
+  occupation: String
+}
+
+type EnableAgent {
+  data: FirstTimeSignUpResult
+  error: Error
+}
+
+type EpfDetails {
+  epfAccountType: String
+  epfMemberNumber: String
+}
+
+input EpfDetailsForRedemption {
+  epfNumber: String
+  epfType: String
+}
+
+type EpfDetailsResponse {
+  epfNumber: String
+  epfType: String
+}
+
+type Error {
+  errorCode: String
+  errorList: [String]
+  message: String
+  statusCode: String
+}
+
+type EtbAccountList {
+  accountNumber: String
+  authorisedSignatory: String
+  currency: [String]
+  description: String
+  riskTolerance: String
+}
+
+type EtbAccountListOutput {
+  data: EtbAccountListResult
+  error: Error
+}
+
+type EtbAccountListRes {
+  etbAccountList: [EtbAccountList]
+}
+
+type EtbAccountListResult {
+  result: EtbAccountListRes
+}
+
+type EtbCheckRes {
+  accounts: [AccountsData]
+  highRisk: Boolean
+  message: String
+  status: Boolean
+}
+
+type EtbCheckResult {
+  result: EtbCheckRes
+}
+
+type EtbCheckV2Output {
+  data: EtbCheckV2Response
+  error: Error
+}
+
+type EtbCheckV2Response {
+  result: EtbCheckV2Result
+}
+
+type EtbCheckV2Result {
+  accountHolder: String
+  accounts: [InvestorAccounts]
+  accountsCount: Int
+  address: AddressDetails
+  clientId: String
+  dateOfBirth: String
+  declarationRequired: [String]
+  emailAddress: String
+  forceUpdate: Boolean
+  highRisk: Boolean
+  idNumber: String
+  idType: String
+  initId: Int
+  isMinor: Boolean
+  message: String
+  status: Boolean
+}
+
+type EventObject {
+  checkbox: String
+  description: String
+  eventName: String
+  header: String
+  headerDescription: String
+  primaryButton: String
+  s3Path: String
+  secondaryButton: String
+}
+
+input ExpiredChangePasswordInput {
+  confirmPassword: String
+  password: String
+}
+
+type ExtensionRemark {
+  date: String
+  remark: String
+}
+
+type FatcaDeclaration {
+  certificate: FileBase64
+  confirmAddress: String
+  correspondenceDeclaration: String
+  formW8Ben: FileBase64
+  formW9: FileBase64
+  reason: String
+  usBorn: String
+  usCitizen: String
+}
+
+type FeaDeclaration {
+  balance: String
+  borrowingFacility: String
+  resident: String
+}
+
+type FileBase64 {
+  base64: String
+  date: String
+  name: String
+  path: String
+  size: Float
+  type: String
+  url: String
+}
+
+input FileBase64Input {
+  base64: String
+  date: String
+  id: String
+  name: String
+  path: String
+  size: Float
+  title: String
+  type: String
+  url: String
+}
+
+type FirstTimeSignUp {
+  data: FirstTimeSignUpResult
+  error: Error
+}
+
+type FirstTimeSignUpResponse {
+  email: String
+  message: String
+  status: Boolean
+}
+
+type FirstTimeSignUpResult {
+  result: FirstTimeSignUpResponse
+}
+
+type FundDetailsDashboard {
+  data: FundDetailsDashboardResult
+  error: Error
+}
+
+type FundDetailsDashboardResponse {
+  ampCategory: String
+  ampFee: String
+  annualManagementFee: String
+  annualTrusteeFee: String
+  docs: [DocumentS3Response]
+  fundCategory: String
+  fundClass: String
+  fundCurrency: String
+  fundName: String
+  fundObjective: String
+  isEpf: Boolean
+  isEpfOnly: String
+  isSchedule: String
+  isSyariah: Boolean
+  isWholesale: String
+  issuingHouse: String
+  landingFund: String
+  minAdditionalInv: CashEpf
+  minInitialInv: CashEpf
+  productType: String
+  prsType: String
+  riskCategory: String
+  salesCharge: CashEpf
+}
+
+type FundDetailsDashboardResult {
+  result: FundDetailsDashboardResponse
+}
+
+type FundList {
+  epfStatus: String
+  fundCategory: String
+  fundClass: String
+  fundCode: String
+  fundCurrency: String
+  fundGroup: String
+  fundId: ID
+  fundName: String
+  fundType: String
+  isDisable: Boolean
+  isEpf: Boolean
+  issuingHouse: String
+  minSwitchInUnits: String
+  performance: String
+  riskCategory: String
+  salesCharge: SalesCharge
+  switchGroup: String
+}
+
+type FundListResponse {
+  data: FundListResult
+  error: Error
+}
+
+type FundListResult {
+  result: [FundList]
+}
+
+type GetCaseOutput {
+  data: GetCaseOutputResult
+  error: Error
+}
+
+type GetCaseOutputRes {
+  client: EddClient
+  data: EddQuestions
+}
+
+type GetCaseOutputResult {
+  result: GetCaseOutputRes
+}
+
+input GetDocumentInput {
+  clientId: String
+  fundId: String
+}
+
+type GetDocuments {
+  data: DocumentResult
+  error: Error
+}
+
+type GetInbox {
+  data: InboxResult
+  error: Error
+}
+
+type GetReceiptSummaryListOutputResponse {
+  message: String
+  orders: [ReportSummaryArray]
+  status: Boolean
+}
+
+type GetReceiptSummaryListOutputResult {
+  result: GetReceiptSummaryListOutputResponse
+}
+
+type GetRedeemFundListDashboard {
+  data: GetRedeemFundListDashboardResult
+  error: Error
+}
+
+type GetRedeemFundListDashboardResponse {
+  availableCurrencies: [String]
+  filters: ProductFilters
+  holdings: [HoldingMasterList]
+  page: Int
+  pages: Int
+  totalCount: ProductCount
+}
+
+type GetRedeemFundListDashboardResult {
+  result: GetRedeemFundListDashboardResponse
+}
+
+type HardCopyDocumentsResponse {
+  branchList: [BranchOption]
+  documents: [UploadedDocs]
+}
+
+type HardCopyDocumentsResult {
+  result: HardCopyDocumentsResponse
+}
+
+input HardcopyAccountInput {
+  joint: [EachUploadDoc]
+  principal: [EachUploadDoc]
+}
+
+type HardcopyAccountQueue {
+  joint: [UploadedDocs]
+  principal: [UploadedDocs]
+}
+
+type HardcopyDetails {
+  accDocs: [DocumentList]
+  required: Boolean
+  utmcDocs: [DocumentList]
+}
+
+type HardcopyDoc {
+  remarks: HolderDoc
+  title: String
+}
+
+input HardcopyDocumentsInput {
+  branchId: String
+  hardcopy: [EachUploadDoc]
+  orderNumber: String
+}
+
+input HardcopyDocumentsInputV2 {
+  account: HardcopyAccountInput
+  branchId: String
+  hardcopy: [EachUploadDoc]
+  isConfirmed: String
+  orderNumber: String
+}
+
+type HardcopyDocumentsResponseV2 {
+  account: HardcopyAccountQueue
+  branchList: [BranchOption]
+  documents: [UploadedDocs]
+}
+
+type HardcopyDocumentsResultV2 {
+  result: HardcopyDocumentsResponseV2
+}
+
+type HolderDoc {
+  hardcopy: [String]
+  jointHolder: [String]
+  principalHolder: [String]
+}
+
+type HoldingMasterList {
+  currency: String
+  currentValue: String
+  fundId: String
+  fundName: String
+  investmentAmount: String
+  isDisable: Boolean
+  isMaturityDisable: Boolean
+  isMoneyMarketFund: Boolean
+  isNavAvailable: Boolean
+  isRedeemDisable: Boolean
+  issuingHouse: String
+  minBalanceHoldings: String
+  minRedeemUnits: String
+  minSwitchOutUnits: String
+  navDate: String
+  navUnits: String
+  pl: String
+  plPercentage: String
+  switchOutMaxSalesCharge: String
+  units: String
+}
+
+input InboxInput {
+  page: String
+  search: String
+}
+
+type InboxRes {
+  createdOn: String
+  isRead: Boolean
+  isSeen: Boolean
+  message: String
+  notificationId: String
+  searchKey: String
+  searchType: String
+  senderName: String
+  source: String
+  title: String
+  updatedAt: String
+}
+
+type InboxResponse {
+  inbox: [InboxRes]
+  newMessageCount: String
+  page: String
+  pages: String
+}
+
+type InboxResult {
+  result: InboxResponse
+}
+
+input IncomeTaxInput {
+  reason: String
+  taxNumber: String
+  taxNumberAvailable: Boolean
+}
+
+input InputFundDetails {
+  age: Int
+  fundId: Int
+}
+
+input InputGetRedeemFundList {
+  accountNo: String
+  allFunds: Boolean
+  fundCurrency: [String]
+  page: Int
+  redeemType: String
+  redemptionReason: String
+  search: String
+  sort: [CustomResultInput]
+  tab: String
+  transactionType: String
+}
+
+input InputSwitchOutFundList {
+  accountNo: String
+  fundCurrency: [String]
+  page: Int
+  search: String
+  sort: [CustomResultInput]
+  tab: String
+  transactionType: String
+}
+
+input InvestmentAccountInfoInput {
+  fundClass: String
+  fundCurrency: String
+  fundId: String
+  fundType: String
+  fundingOption: String
+  investmentAmount: String
+  isScheduled: String
+  isTopup: Boolean
+  prsType: String
+  salesCharge: String
+  scheduledInvestmentAmount: String
+  scheduledSalesCharge: String
+}
+
+input InvestmentInfoInput {
+  currency: String
+  fundId: String
+  redeemAmount: String
+  redeemUnits: String
+  switchInDetails: [SwitchInFundDetails]
+  switchOutFundId: String
+  switchOutHoldings: String
+}
+
+type InvestmentOutput {
+  data: InvestmentResult
+  error: Error
+}
+
+type InvestmentResult {
+  result: AccountInvestmentRes
+}
+
+type InvestmentSummary {
+  distributionInstruction: String
+  fundClass: String
+  fundCode: String
+  fundCurrency: String
+  fundIssuer: String
+  fundName: String
+  fundType: String
+  fundingOption: String
+  investmentAmount: String
+  investmentType: String
+  isEpf: Boolean
+  isFea: Boolean
+  isScheduled: Boolean
+  isSyariah: Boolean
+  isTopup: Boolean
+  landingFund: String
+  recurring: String
+  salesCharge: String
+  scheduledInvestmentAmount: String
+  scheduledSalesCharge: String
+}
+
+type InvestorAccountDetailsOutput {
+  data: InvestorAccountDetailsResponse
+  error: Error
+}
+
+type InvestorAccountDetailsResponse {
+  result: InvestorAccountDetailsResult
+}
+
+type InvestorAccountDetailsResult {
+  accountDetails: AccountSummary
+  addressInformation: AddressInformation
+  bankInformation: BankTypes
+  contactDetails: ContactDetails
+  declaration: DeclarationList
+  documentSummary: DocumentSummary
+  employmentInformation: EmploymentDetails
+  epfDetails: EpfDetails
+  funds: [AccountHolding]
+  investorOverview: [OverviewSummary]
+  orderHistory: [OrderList]
+  personalDetails: ClientDetails
+  withOrderHistory: Boolean
+}
+
+type InvestorAccounts {
+  accountHolder: String
+  accountNo: String
+  accountOpeningDate: String
+  ampDetails: ProductDashboardRes
+  authorisedSignatory: String
+  currency: [String]
+  dateOfBirth: String
+  declarationRequired: [String]
+  epfConvertedAccount: Boolean
+  epfDetails: EpfDetails
+  fundType: String
+  holdings: [AccountHolding]
+  idNumber: String
+  idType: String
+  isAccountFreeze: Boolean
+  isJoint: Boolean
+  isPrsGovAccount: Boolean
+  isRecurring: Boolean
+  isSyariah: Boolean
+  jointDateOfBirth: String
+  jointEmail: String
+  jointIdNumber: String
+  jointIdType: String
+  jointName: String
+  name: String
+  paymentMethod: String
+  pl: String
+  plPercentage: String
+  riskTolerance: String
+  status: String
+}
+
+type InvestorDashboard {
+  data: InvestorDashboardResult
+  error: Error
+}
+
+type InvestorDashboardResponse {
+  filters: InvestorFilters
+  investors: [InvestorsDetails]
+  page: Int
+  pages: Int
+  totalCount: Int
+}
+
+type InvestorDashboardResult {
+  result: InvestorDashboardResponse
+}
+
+type InvestorDetails {
+  data: InvestorDetailsResult
+  error: Error
+}
+
+type InvestorDetailsResponse {
+  accountHolder: String
+  address: AddressDetails
+  clientId: String
+  dateOfBirth: String
+  declarationRequired: [String]
+  email: String
+  emailLastUpdated: String
+  idNumber: String
+  idType: String
+  initId: String
+  investorDetails: [InvestorsData]
+  isForceUpdate: Boolean
+  isMinor: Boolean
+  issuanceCountry: String
+  mobileNo: String
+  mobileNoLastUpdated: String
+  name: String
+  page: Int
+  pages: Int
+  totalCount: Int
+}
+
+type InvestorDetailsResult {
+  result: InvestorDetailsResponse
+}
+
+type InvestorFilters {
+  riskInfo: [String]
+}
+
+input InvestorInput {
+  idNumber: String
+  page: String
+  sort: [CustomResultInput]
+  tab: String
+  transactionType: String
+}
+
+type InvestorNamesDashboard {
+  joint: String
+  principal: String
+}
+
+type InvestorsData {
+  accountHolder: String
+  accountNo: String
+  accountOpeningDate: String
+  ampDetails: ProductDashboardRes
+  authorisedSignatory: String
+  clientId: String
+  currency: [String]
+  dateOfBirth: String
+  email: String
+  epfConvertedAccount: Boolean
+  epfDetails: EpfDetails
+  fundType: String
+  holdings: [AccountHolding]
+  idNumber: String
+  idType: String
+  isAccountFreeze: Boolean
+  isPrsGovAccount: Boolean
+  isRecurring: Boolean
+  isSyariah: Boolean
+  jointDateOfBirth: String
+  jointDeclarationRequired: [String]
+  jointEmail: String
+  jointId: String
+  jointIdNumber: String
+  jointIdType: String
+  jointName: String
+  jointRisk: String
+  name: String
+  paymentMethod: String
+  pl: String
+  plPercentage: String
+  principalRisk: String
+  riskTolerance: String
+  status: String
+}
+
+type InvestorsDetails {
+  email: String
+  idNumber: String
+  mobileNo: String
+  name: String
+  riskTolerance: String
+}
+
+type JWT {
+  accessToken: String
+  agentCategory: String
+  agentId: String
+  branch: String
+  email: String
+  events: [EventObject]
+  idToken: String
+  inboxCount: String
+  isExpired: Boolean
+  isInternalAgent: Boolean
+  isMultiUtmc: Boolean
+  isTermsAgreed: Boolean
+  licenseCode: String
+  licenseType: [String]
+  name: String
+  rank: String
+  refreshToken: String
+}
+
+type JWTResult {
+  result: JWT
+}
+
+input JointHolderInput {
+  dateOfBirth: String
+  id: String
+  idType: String
+  name: String
+}
+
+type JointOutput {
+  clientId: String
+  dateOfBirth: String
+  gender: String
+  id: String
+  name: String
+}
+
+type ListHardcopyDocumentsOutput {
+  data: HardCopyDocumentsResult
+  error: Error
+}
+
+type ListHardcopyDocumentsOutputV2 {
+  data: HardcopyDocumentsResultV2
+  error: Error
+}
+
+type ListPaymentRequiredOutput {
+  data: PaymentRequiredResult
+  error: Error
+}
+
+type ListSoftcopyDocumentsOutput {
+  data: ListSoftcopyDocumentsResult
+  error: Error
+}
+
+type ListSoftcopyDocumentsRes {
+  joint: [UploadedDocs]
+  principal: [UploadedDocs]
+}
+
+type ListSoftcopyDocumentsResult {
+  result: ListSoftcopyDocumentsRes
+}
+
+input LoginInput {
+  hideEvents: [String]
+  password: String
+  username: String
+}
+
+type MinMaxAmount {
+  maximum: String
+  minimum: String
+}
+
+input ModifyAction {
+  id: String
+  option: String
+}
+
+type Mutation {
+  activate(input: ActivateInput): Activate
+  addBankSummaryInApplication(
+    input: addBankSummaryInApplicationInput
+  ): addBankSummaryInApplicationOutput
+  agentRegister(input: RegisterInput): AgentRegistration
+  changePassword(input: ChangePasswordInput): ChangePassword
+  changePasswordV2(input: ChangePasswordInputV2): CommonOutput
+  clientRegister(input: register): registerClient
+  clientRegisterV2(input: ClientRegisterInput): ClientRegisterOutput
+  emailOtpVerification(input: verifyOtp): CommonOutput
+  emailOtpVerificationV2(input: EmailOtpVerificationInput): CommonOutput
+  emailVerification(input: email): CommonOutput
+  emailVerificationV2(input: EmailVerificationInput): SendEmailOutput
+  expiredChangePassword(input: ExpiredChangePasswordInput): CommonOutput
+  firstTimeSignUp(input: NricInput): FirstTimeSignUp
+  forgotPassword(input: NricInput): PasswordReset
+  generateOrderTrackingSummary(input: PdfInput): PdfOutput
+  generatePdf(input: PdfInput): PdfOutput
+  generatePdfTransactions(input: TransactionsPdfInput): PdfOutput
+  generatePdfV2(input: PdfInput): PdfOutput
+  resendLockOtp(input: NricInput): EnableAgent
+  resendOtp(input: ResendOtp): ResendOtpVerify
+  resetPassword(input: SetPasswordInput): ResetPassword
+  resubmitOrder(input: OrderDetailsInput): CommonOutput
+  riskAssessment(input: risk): riskcalculation
+  riskAssessmentV2(input: RiskAssessmentInput): RiskAssessmentOutput
+  signUp(input: SetPasswordInput): SignUpPassword
+  submitClientAccount(input: SubmitClientAccountInput): InvestmentOutput
+  submitClientAccountHybrid(input: SubmitClientAccountInput): InvestmentOutput
+  submitClientAccountTransactions(
+    input: SubmitClientAccountTransactionsInput
+  ): SubmitClientAccountTransactionOutput
+  submitClientAccountV2(input: SubmitClientAccountInput): InvestmentOutput
+  submitCr(input: submitCrInput): SubmitCrOutput
+  submitEdd(input: SubmitEddInput): CommonOutput
+  submitHardcopyDocuments(input: HardcopyDocumentsInput): CommonOutput
+  submitHardcopyDocumentsV2(
+    input: HardcopyDocumentsInputV2
+  ): SubmitHardcopyOutputV2
+  submitPdf(input: submitPdfInput): CommonOutput
+  submitPdfTransactions(
+    input: submitPdfTransactionsInput
+  ): SubmitPdfTransactionsOutput
+  submitPdfV2(input: SubmitPdfInputV2): SubmitPdfOutputV2
+  submitProofOfPayments(input: SubmitPopInput): SubmitPopOutput
+  submitRedeemInvestment(
+    input: SubmitRedeemInvestmentInput
+  ): SubmitRedeemInvestmentOutput
+  submitSoftcopyDocuments(input: SoftcopyDocumentsInput): SubmitSoftcopyOutput
+  submitSoftcopyDocumentsV2(
+    input: SoftcopyDocumentsInputV2
+  ): SubmitSoftcopyOutputV2
+  submitSwitchingInvestment(
+    input: SubmitSwitchingInvestmentInput
+  ): SubmitSwitchingInvestmentOutput
+  summaryReceipt(input: summaryReceiptInput): summaryReceiptOutput
+  updateInbox(input: UpdateInboxInput): CommonOutput
+  updateSeen(input: SeenInput): CommonOutput
+  userLogin(input: LoginInput): AgentLogin
+  verifyOtp(input: otp): OtpVerification
+  verifyOtpAgent(input: otp): VerifyOtpAgent
+  verifySignUp(input: otp): VerifySignUpOTP
+}
+
+input NricInput {
+  nric: String
+}
+
+type OrderAmountCurrency {
+  amount: String
+  currency: String
+}
+
+type OrderAmountCurrencyForRedemption {
+  currency: String
+  redeemAmount: String
+}
+
+input OrderDetailsInput {
+  orderNumber: String
+}
+
+type OrderList {
+  lastUpdated: String
+  orderNumber: String
+  status: String
+  totalInvestment: [OrderAmountCurrency]
+  totalUnits: String
+  transactionType: String
+}
+
+input OrderSummaryInput {
+  orderNumber: String
+}
+
+input OrderSummaryInputV2 {
+  orderNumber: String
+}
+
+type OrderSummaryOutput {
+  data: OrderSummaryResult
+  error: Error
+}
+
+type OrderSummaryOutputV2 {
+  data: OrderSummaryResultV2
+  error: Error
+}
+
+type OrderSummaryRes {
+  extensionRemark: ExtensionRemark
+  investmentSummary: [InvestmentSummary]
+  orderNumber: String
+  paymentSummary: [PaymentSummary]
+  profile: [ClientProfile]
+  remark: [Reasons]
+  status: String
+  totalInvestment: [OrderAmountCurrency]
+  transactionDetails: TxDetails
+}
+
+type OrderSummaryResV2 {
+  documentSummary: DocumentSummary
+  extensionRemark: ExtensionRemark
+  investmentSummary: [InvestmentSummary]
+  isEtb: Boolean
+  orderNumber: String
+  paymentSummary: [PaymentSummary]
+  profile: [ClientProfile]
+  redeemSummary: RedeemSummary
+  redemptionInvestmentSummary: [AccountInvestmentDetailsRedemption]
+  remark: [Reasons]
+  riskInfo: ClientRisk
+  status: String
+  switchingInvestmentSummary: [AccountInvestmentDetailsSwitching]
+  totalInvestment: [OrderAmountCurrency]
+  totalRedeemAmount: [OrderAmountCurrencyForRedemption]
+  totalUnits: String
+  trackingSummary: [TrackingSummary]
+  transactionDetails: TxDetails
+  transactionType: String
+}
+
+type OrderSummaryResult {
+  result: OrderSummaryRes
+}
+
+type OrderSummaryResultV2 {
+  result: OrderSummaryResV2
+}
+
+type OtpVerification {
+  data: CommonResult
+  error: Error
+}
+
+type OverviewSummary {
+  clientId: String
+  id: [FileBase64]
+  idNumber: String
+  idType: String
+  lastUpdated: String
+  name: String
+  riskProfile: String
+}
+
+input PDetailInfoInput {
+  bumiputera: String
+  countryOfBirth: String
+  educationLevel: String
+  expirationDate: String
+  gender: String
+  id: [FileBase64Input]
+  issuanceCountry: String
+  maritalStatus: String
+  monthlyHouseholdIncome: String
+  mothersMaidenName: String
+  name: String
+  nationality: String
+  placeOfBirth: String
+  race: String
+  relationship: String
+  salutation: String
+}
+
+type PasswordReset {
+  data: FirstTimeSignUpResult
+  error: Error
+}
+
+type PaymentDoc {
+  remarks: HolderDoc
+  title: String
+}
+
+input PaymentInput {
+  action: ModifyAction
+  amount: String
+  bankAccountName: String
+  bankAccountNumber: String
+  bankName: String
+  checkNumber: String
+  clientName: String
+  clientTrustAccountNumber: String
+  ctaParent: String
+  ctaTag: PaymentTagInput
+  currency: String
+  epfAccountNumber: String
+  epfReferenceNumber: String
+  expanded: String
+  frequency: String
+  isCombined: String
+  kibBankAccountNumber: String
+  kibBankName: String
+  lastAmountUpdate: String
+  parent: String
+  paymentMethod: String
+  proof: FileBase64Input
+  recurringBank: String
+  recurringType: String
+  referenceNumber: String
+  remark: String
+  saved: String
+  tag: PaymentTagInput
+  transactionDate: String
+  transactionTime: String
+  utmc: String
+}
+
+type PaymentRequiredRes {
+  allowedRecurringType: [String]
+  completedSurplusCurrencies: [String]
+  createdOn: String
+  ctaDetails: [UploadedPaymentInfo]
+  epfAccountNumber: String
+  funds: [InvestmentSummary]
+  isLastOrder: Boolean
+  isSurplusUtilised: Boolean
+  orderNumber: String
+  payment: [UploadedPaymentInfo]
+  paymentCount: Int
+  paymentType: String
+  recurringDetails: RecurringDetails
+  status: String
+  surplusBalance: [UploadedPaymentInfo]
+  totalInvestment: [OrderAmountCurrency]
+  totalPaidAmount: [OrderAmountCurrency]
+}
+
+type PaymentRequiredResult {
+  result: PaymentRequiredRes
+}
+
+type PaymentSummary {
+  bankAccountName: String
+  bankAccountNumber: String
+  bankName: String
+  checkNumber: String
+  clientName: String
+  clientTrustAccountNumber: String
+  epfAccountNumber: String
+  epfReferenceNo: String
+  frequency: String
+  fundCurrency: String
+  investmentAmount: String
+  isCombined: Boolean
+  kibBankAccountNumber: String
+  kibBankName: String
+  paymentMethod: String
+  proofOfPayment: FileBase64
+  recurringBank: String
+  recurringType: String
+  referenceNumber: String
+  remark: String
+  surplusNote: String
+  transactionDate: String
+  utmc: String
+}
+
+type PaymentTag {
+  orderNumber: String
+  uuid: String
+}
+
+input PaymentTagInput {
+  orderNumber: String
+  uuid: String
+}
+
+input PdfDocument {
+  adviserSignature: FileBase64Input
+  clientSignature: FileBase64Input
+  jointSignature: FileBase64Input
+  orderNumber: String
+  pdf: String
+}
+
+input PdfDocumentTransactions {
+  adviserSignature: FileBase64Input!
+  clientSignature: FileBase64Input
+  jointSignature: FileBase64Input
+  orderNumber: String!
+  pdf: String!
+}
+
+input PdfDocumentV2 {
+  adviserSignature: FileBase64Input!
+  clientSignature: FileBase64Input!
+  jointSignature: FileBase64Input
+  orderNumber: String!
+  pdf: String!
+}
+
+input PdfInput {
+  clientId: String
+  initId: String
+  isEtb: Boolean
+  isForceUpdate: Boolean
+  orderNo: String
+}
+
+type PdfOutput {
+  data: PdfOutputResult
+  error: Error
+}
+
+type PdfOutputData {
+  base64: String
+  date: String
+  name: String
+  type: String
+  url: String
+  urlPageCount: Int
+}
+
+type PdfOutputResponse {
+  message: String
+  pdf: PdfOutputData
+  status: Boolean
+}
+
+type PdfOutputResult {
+  result: PdfOutputResponse
+}
+
+type PopMessage {
+  docList: [PaymentDoc]
+  excessAmount: [OrderAmountCurrency]
+  orderNumber: String
+  paymentType: String
+  remarks: [String]
+  status: String
+  totalPayment: [OrderAmountCurrency]
+  totalRecurring: String
+}
+
+input PopOrdersInput {
+  orderNumber: String
+  paymentType: String
+  payments: [PaymentInput]
+}
+
+input PreviousResponseInput {
+  caseId: String
+  question: String
+}
+
+type PreviousResponseOutput {
+  data: PreviousResponseResult
+  error: Error
+}
+
+type PreviousResponseRes {
+  answer: String
+  questionId: String
+}
+
+type PreviousResponseResult {
+  result: PreviousResponseRes
+}
+
+input PrincipalHolderInput {
+  dateOfBirth: String
+  id: String
+  idType: String
+  name: String
+}
+
+input PrincipalInput {
+  country: String
+  dateOfBirth: String
+  id: String
+  idType: String
+  name: String
+}
+
+type PrincipalOutput {
+  clientId: String
+  dateOfBirth: String
+  gender: String
+  id: String
+  name: String
+}
+
+type ProceedPayable {
+  bankSummary: AccountBankResponse
+  ctaSummary: CtaSummaryResponse
+  epfDetails: EpfDetailsResponse
+}
+
+type ProductCount {
+  all: String
+  recommended: String
+}
+
+type ProductDashboard {
+  data: ProductDashboardResult
+  error: Error
+}
+
+type ProductDashboardRes {
+  ampCategory: String
+  ampFee: String
+  annualManagementFee: String
+  annualTrusteeFee: String
+  docs: [DocumentS3Response]
+  fundAbbr: String
+  fundCategory: String
+  fundClasses: [String]
+  fundCode: String
+  fundCurrencies: [String]
+  fundId: String
+  fundName: String
+  fundObjective: String
+  fundType: String
+  incomeDistribution: String
+  isEpf: String
+  isEpfOnly: String
+  isFea: String
+  isScheduled: String
+  isSyariah: String
+  isWholesale: String
+  issuingHouse: String
+  landingFund: String
+  masterList: [ProductMasterList]
+  performance: String
+  prsType: String
+  riskCategory: String
+}
+
+type ProductDashboardResponse {
+  filters: ProductFilters
+  page: String
+  pages: String
+  products: [ProductDashboardRes]
+  totalCount: ProductCount
+}
+
+type ProductDashboardResult {
+  result: ProductDashboardResponse
+}
+
+input ProductFilter {
+  accountType: String
+  age: String
+  fundCurrency: [String]
+  fundType: String
+  isConventional: String
+  isEpf: String
+  isSyariah: String
+  issuingHouse: [String]
+  netWorth: String
+  page: String
+  recommendedRisk: String
+  riskCategory: [String]
+  search: String
+  showBy: String
+  sort: [CustomResultInput]
+  tab: String
+}
+
+type ProductFilters {
+  fundCategory: [String]
+  fundCurrency: [String]
+  fundType: [String]
+  issuingHouse: [String]
+  riskCategory: [String]
+}
+
+type ProductMasterList {
+  class: String
+  currency: String
+  fundId: String
+  isEpf: String
+  newSalesAmount: CashEpf
+  salesCharge: CashEpf
+  topUpAmount: CashEpf
+}
+
+type Query {
+  agentDashboardV2(input: DashboardInput): AgentDashboard
+  agentProfile: AgentProfile
+  caseQuestions(input: EddCommonInput): GetCaseOutput
+  caseResponse(input: CaseResponseInput): CaseResponseOutput
+  checkPassword(input: CheckPasswordInput): CommonOutput
+  clientProfile(input: EddCommonInput): ClientProfileOutput
+  clientStatus(input: clientExist): CommonOutput
+  dashboard(input: DashboardInput): Dashboard
+  eddDashboard(input: DashboardInput): EddDashboard
+  eddDashboardV2(input: DashboardInput): EddDashboardV2
+  etbAccountList(input: SubmitClientAccountInput): EtbAccountListOutput
+  etbCheck(input: clientStatusInput): etbCheck
+  etbCheckV2(input: etbCheckV2Input): EtbCheckV2Output
+  fundDetails(input: InputFundDetails): FundDetailsDashboard
+  getAllBanksInAccount(input: BankInfoInput): BankInfoDtoResult
+  getDocuments(input: GetDocumentInput): GetDocuments
+  getInbox(input: InboxInput): GetInbox
+  getOrderSummary(input: OrderSummaryInput): OrderSummaryOutput
+  getOrderSummaryV2(input: OrderSummaryInputV2): OrderSummaryOutputV2
+  getReceiptSummaryList(
+    input: getReceiptSummaryListInput
+  ): getReceiptSummaryListOutput
+  getRedeemFundList(input: InputGetRedeemFundList): GetRedeemFundListDashboard
+  investorAccountDetails(
+    input: investorAccountDetailsInput
+  ): InvestorAccountDetailsOutput
+  investorDashboard(input: DashboardInput): InvestorDashboard
+  investorDetailsDashboard(input: InvestorInput): InvestorDetails
+  listHardcopyDocuments(input: OrderDetailsInput): ListHardcopyDocumentsOutput
+  listHardcopyDocumentsV2(
+    input: OrderDetailsInput
+  ): ListHardcopyDocumentsOutputV2
+  listPaymentRequired(input: OrderDetailsInput): ListPaymentRequiredOutput
+  listSoftcopyDocuments(input: OrderDetailsInput): ListSoftcopyDocumentsOutput
+  listSoftcopyDocumentsV2(input: OrderDetailsInput): ListSoftcopyDocumentsOutput
+  previousResponse(input: PreviousResponseInput): PreviousResponseOutput
+  productList(input: ProductFilter): ProductDashboard
+  receiptSummary(input: ReceiptSummaryInput): ReceiptSummaryOutput
+  switchOutFundList(input: InputSwitchOutFundList): SwitchOutFundListDashboard
+  switchingFundList(input: SwitchingFundListInput): FundListResponse
+}
+
+type Reasons {
+  label: String
+  remark: [String]
+}
+
+type ReceiptSummaryData {
+  fundCount: String
+  fundType: String
+  isEpf: String
+  isScheduled: String
+  name: String
+  orderNumber: String
+  orderTotalAmount: [OrderAmountCurrency]
+  remark: String
+  totalUnits: String
+}
+
+input ReceiptSummaryInput {
+  clientId: String
+  initId: String
+  isForceUpdate: Boolean
+  transactionType: String
+}
+
+type ReceiptSummaryOutput {
+  data: ReceiptSummaryResult
+  error: Error
+}
+
+type ReceiptSummaryResponse {
+  message: String
+  orders: [ReceiptSummaryData]
+  status: Boolean
+}
+
+type ReceiptSummaryResult {
+  result: ReceiptSummaryResponse
+}
+
+type RecurringDetails {
+  dda: [DdaFpxInfo]
+  fpx: [DdaFpxInfo]
+}
+
+type RedeemIncomeTax {
+  reason: String
+  taxNumber: String
+}
+
+type RedeemSummary {
+  incomeTaxDetails: RedeemIncomeTax
+  proceedPayable: ProceedPayable
+  redeemType: String
+  redemptionMethod: String
+}
+
+input RedemptionDetails {
+  bankSummary: AccountBankInput
+  ctaSummary: CtaSummary
+}
+
+type RegisterClientRes {
+  accountType: String
+  jointHolder: JointOutput
+  message: String
+  principalHolder: PrincipalOutput
+  status: Boolean
+}
+
+type RegisterClientResult {
+  result: RegisterClientRes
+}
+
+input RegisterInput {
+  addrTown: String
+  address: String
+  agentCode: String
+  branch: Int
+  channel: String
+  email: String
+  isBoth: Boolean
+  mobile: String
+  name: String
+  omniEnabled: Boolean
+  origin: String
+  rank: String
+  username: String
+}
+
+type ReportSummaryArray {
+  fundCount: String
+  fundType: String
+  isEpf: String
+  isScheduled: String
+  name: String
+  orderNumber: String
+  orderTotalAmount: [OrderAmountCurrency]
+}
+
+input ResendOtp {
+  nric: String
+  type: String
+}
+
+type ResendOtpVerify {
+  data: CommonResult
+  error: Error
+}
+
+type ResetPassword {
+  data: CommonResult
+  error: Error
+}
+
+input RiskAnswersInput {
+  questionEight: Int
+  questionFive: Int
+  questionFour: Int
+  questionNine: Int
+  questionSeven: Int
+  questionSix: Int
+  questionThree: Int
+  questionTwo: Int
+}
+
+input RiskAssessmentInput {
+  clientId: String
+  id: String
+  initId: String
+  isEtb: Boolean
+  isForceUpdate: Boolean
+  riskAssessment: RiskAnswersInput
+}
+
+type RiskAssessmentOutput {
+  data: RiskAssessmentResponse
+  error: Error
+}
+
+type RiskAssessmentRes {
+  appetite: String
+  fundSuggestion: String
+  message: String
+  netWorth: String
+  profile: String
+  rangeOfReturn: String
+  status: Boolean
+  type: String
+}
+
+type RiskAssessmentResponse {
+  result: RiskAssessmentResult
+}
+
+type RiskAssessmentResult {
+  appetite: String
+  fundSuggestion: String
+  message: String
+  netWorth: String
+  profile: String
+  rangeOfReturn: String
+  result: RiskAssessmentRes
+  status: Boolean
+  type: String
+}
+
+type SalesCharge {
+  cash: MinMaxAmount
+  epf: MinMaxAmount
+}
+
+input SeenInput {
+  dashboard: String
+  referenceKey: String
+  tab: [String]
+}
+
+type SendEmailOutput {
+  data: SendEmailResponse
+  error: Error
+}
+
+type SendEmailResponse {
+  result: SendEmailResult
+}
+
+type SendEmailResult {
+  message: String
+  otpSendTime: String
+  status: Boolean
+}
+
+input SetPasswordInput {
+  confirmPassword: String
+  password: String
+  username: String
+}
+
+type SignUpPassword {
+  data: CommonResult
+  error: Error
+}
+
+type SoftCopyDoc {
+  remarks: HolderDoc
+  title: String
+}
+
+type SoftcopyDetails {
+  documents: [DocumentList]
+  required: Boolean
+}
+
+input SoftcopyDocumentsInput {
+  joint: [EachUploadDoc]
+  orderNumber: String
+  principal: [EachUploadDoc]
+}
+
+input SoftcopyDocumentsInputV2 {
+  isConfirmed: String
+  joint: [EachUploadDoc]
+  orderNumber: String
+  principal: [EachUploadDoc]
+}
+
+type SubAddress {
+  line1: String
+  line2: String
+  line3: String
+  line4: String
+}
+
+input SubAddressInput {
+  line1: String
+  line2: String
+  line3: String
+}
+
+input SubmitClientAccountInput {
+  incomeDistribution: String
+  initId: String
+  investments: [InvestmentAccountInfoInput]
+  isEtb: Boolean
+  joint: AccountJointInput
+  principal: AccountInput
+  signatory: String
+}
+
+type SubmitClientAccountTransactionOutput {
+  data: SubmitClientAccountTransactionResult
+  error: Error
+}
+
+type SubmitClientAccountTransactionRes {
+  grandTotal: [OrderAmountCurrency]
+  grandTotalRecurring: OrderAmountCurrency
+  orders: [AccountOrder]
+}
+
+type SubmitClientAccountTransactionResult {
+  result: SubmitClientAccountTransactionRes
+}
+
+input SubmitClientAccountTransactionsInput {
+  accountNo: String
+  initId: String
+  investments: [InvestmentAccountInfoInput]
+  principal: AccountInputTransactions
+}
+
+type SubmitCrOutput {
+  data: SubmitCrOutputResult
+  error: Error
+}
+
+type SubmitCrOutputRes {
+  message: String
+}
+
+type SubmitCrOutputResult {
+  result: SubmitCrOutputRes
+}
+
+input SubmitEddInput {
+  additionalAnswers: [EddAnswer]
+  allAnswers: [EddAnswer]
+  caseId: String
+}
+
+type SubmitHardcopyOutputV2 {
+  data: SubmitHardcopyResponseV2
+  error: Error
+}
+
+type SubmitHardcopyResponseV2 {
+  result: SubmitHardcopyResultsV2
+}
+
+type SubmitHardcopyResultsV2 {
+  message: String
+  orders: [DocSummaryMessage]
+}
+
+input SubmitPdfInputV2 {
+  clientId: String
+  documents: [PdfDocumentV2]
+  initId: String
+  isConfirmed: String
+  isEtb: Boolean
+  isForceUpdate: Boolean
+}
+
+type SubmitPdfOutputV2 {
+  data: SubmitPdfOutputV2Response
+  error: Error
+}
+
+type SubmitPdfOutputV2Response {
+  result: SubmitPdfOutputV2Result
+}
+
+type SubmitPdfOutputV2Result {
+  message: String
+  orderNumber: [String]
+  remarks: [DocRemark]
+  status: String
+}
+
+type SubmitPdfTransactionsOutput {
+  data: SubmitPdfTransactionsResponse
+  error: Error
+}
+
+type SubmitPdfTransactionsResponse {
+  result: SubmitPdfTransactionsResult
+}
+
+type SubmitPdfTransactionsResult {
+  message: String
+  status: Boolean
+  totalRedeemAmount: [OrderAmountCurrencyForRedemption]
+  totalRedeemUnits: String
+  totalSwitchOutUnits: String
+  withHardcopy: Boolean
+}
+
+input SubmitPopInput {
+  isConfirmed: String
+  orders: [PopOrdersInput]
+}
+
+type SubmitPopOutput {
+  data: SubmitPopResults
+  error: Error
+}
+
+type SubmitPopResponse {
+  account: PopMessage
+  accountType: String
+  message: String
+  orders: [PopMessage]
+  txRef: String
+  withFloating: Boolean
+  withHardcopy: Boolean
+  withMoneySightedCta: Boolean
+}
+
+type SubmitPopResults {
+  result: SubmitPopResponse
+}
+
+input SubmitRedeemInvestmentInput {
+  accountNo: String
+  clientId: String
+  epfDetails: EpfDetailsForRedemption
+  incomeTaxDetails: IncomeTaxInput
+  initId: String
+  investments: [InvestmentInfoInput]
+  redeemType: String
+  redemptionDetails: RedemptionDetails
+  redemptionMethod: String
+}
+
+type SubmitRedeemInvestmentOutput {
+  data: SubmitRedeemInvestmentResult
+  error: Error
+}
+
+type SubmitRedeemInvestmentRes {
+  orders: [AccountOrderRedemption]
+  proceedPayable: ProceedPayable
+}
+
+type SubmitRedeemInvestmentResult {
+  result: SubmitRedeemInvestmentRes
+}
+
+type SubmitSoftcopyOutput {
+  data: SubmitSoftcopyResults
+  error: Error
+}
+
+type SubmitSoftcopyOutputV2 {
+  data: SubmitSoftcopyResponseV2
+  error: Error
+}
+
+type SubmitSoftcopyResponse {
+  message: String
+  status: Boolean
+  txRef: String
+}
+
+type SubmitSoftcopyResponseV2 {
+  result: SubmitSoftcopyResultsV2
+}
+
+type SubmitSoftcopyResults {
+  result: SubmitSoftcopyResponse
+}
+
+type SubmitSoftcopyResultsV2 {
+  message: String
+  orders: [DocSummaryMessageSoftCopy]
+}
+
+input SubmitSwitchingInvestmentInput {
+  accountNo: String
+  initId: String
+  investments: [InvestmentInfoInput]
+  principal: AccountInputTransactions
+}
+
+type SubmitSwitchingInvestmentOutput {
+  data: SubmitSwitchingInvestmentResult
+  error: Error
+}
+
+type SubmitSwitchingInvestmentRes {
+  orders: [AccountOrderSwitching]
+}
+
+type SubmitSwitchingInvestmentResult {
+  result: SubmitSwitchingInvestmentRes
+}
+
+type SummaryPdfOutput {
+  base64: String
+  date: String
+  name: String
+  type: String
+}
+
+type SummaryReceiptOutputResponse {
+  message: String
+  pdf: [SummaryPdfOutput]
+  status: Boolean
+}
+
+type SummaryReceiptOutputResult {
+  result: SummaryReceiptOutputResponse
+}
+
+type SurplusUtilised {
+  amount: String
+  currency: String
+  orderNumber: String
+  paymentId: String
+}
+
+input SwitchInFundDetails {
+  switchInFundId: String
+  switchInSalesCharge: String
+  switchInUnits: String
+}
+
+type SwitchInResponse {
+  accountType: String
+  distributionInstruction: String
+  exitFee: String
+  fundClass: String
+  fundCurrency: String
+  isSwitching: String
+  isTopUp: Boolean
+  leadTime: String
+  salesCharge: String
+  switchInFundAbbr: String
+  switchInFundCode: String
+  switchInFundId: String
+  switchInFundIssuer: String
+  switchInFundName: String
+  switchInFundProcessingGroup: String
+  switchInUnits: String
+  switchingFee: String
+}
+
+type SwitchOutFundListDashboard {
+  data: SwitchOutFundListDashboardResult
+  error: Error
+}
+
+type SwitchOutFundListDashboardResponse {
+  availableCurrencies: [String]
+  filters: ProductFilters
+  holdings: [HoldingMasterList]
+  page: Int
+  pages: Int
+  totalCount: ProductCount
+}
+
+type SwitchOutFundListDashboardResult {
+  result: SwitchOutFundListDashboardResponse
+}
+
+input SwitchingFundListInput {
+  accountNo: String!
+  excludeFunds: [Int]
+  netWorth: String
+  switchOutFundId: Int!
+  switchOutUnits: String!
+}
+
+type TXDetailsV2 {
+  accountType: String
+  canProceed: Boolean
+  clientId: String
+  createdOn: String
+  documents: [DocumentsToSubmit]
+  dueDate: String
+  highlightedText: String
+  investorName: InvestorNamesDashboard
+  isScheduled: Boolean
+  isSeen: Boolean
+  jointId: String
+  label: String
+  lastUpdated: String
+  orderNumber: String
+  reason: [DashboardReason]
+  remark: [Reasons]
+  status: String
+  switchOutUnits: String
+  totalInvestment: [OrderAmountCurrency]
+  totalUnits: String
+  transactionType: String
+  withHardcopy: Boolean
+}
+
+type TinInfo {
+  country: String
+  reason: String
+  tinNumber: String
+}
+
+input TinInfoInput {
+  country: String
+  noTin: String
+  reason: String
+  tinNumber: String
+}
+
+type TrackingSummary {
+  createdOn: String
+  level: String
+  remark: [Reasons]
+  status: String
+}
+
+input TransactionsPdfInput {
+  accountNo: String
+  clientId: String
+  initId: String
+  isEtb: Boolean
+  orderNo: String
+  transactionType: String
+}
+
+type TxDetails {
+  accountNo: String
+  accountNumber: [String]
+  accountOperationMode: String
+  accountType: String
+  kibProcessingBranch: String
+  registrationDate: String
+  servicingAdviserCode: String
+  servicingAdviserName: String
+  totalSwitchOutUnits: String
+}
+
+input UpdateInboxInput {
+  markAllAsRead: String
+  notificationIds: [String]
+}
+
+input UploadDocumentFile {
+  file: FileBase64Input
+  id: String
+  title: String
+}
+
+type UploadedDocs {
+  docs: [UploadedDocsInfo]
+  name: String
+}
+
+type UploadedDocsInfo {
+  id: String
+  isEditable: Boolean
+  name: String
+  title: String
+  type: String
+  url: String
+}
+
+type UploadedPaymentInfo {
+  amount: String
+  bankAccountName: String
+  bankAccountNumber: String
+  bankName: String
+  belongsTo: String
+  checkNumber: String
+  clientName: String
+  clientTrustAccountNumber: String
+  ctaParent: String
+  ctaTag: PaymentTag
+  currency: String
+  epfAccountNumber: String
+  epfReferenceNo: String
+  excess: OrderAmountCurrency
+  frequency: String
+  initialExcess: OrderAmountCurrency
+  isCombined: Boolean
+  isEditable: Boolean
+  kibBankAccountNumber: String
+  kibBankName: String
+  orderNumber: String
+  parent: String
+  paymentId: String
+  paymentMethod: String
+  proof: UploadedDocsInfo
+  recurringBank: String
+  recurringType: String
+  referenceNumber: String
+  remark: String
+  sharedTo: [String]
+  tag: PaymentTag
+  transactionDate: String
+  utilised: [SurplusUtilised]
+}
+
+type VerifyOtpAgent {
+  data: CommonResult
+  error: Error
+}
+
+type VerifySignUpOTP {
+  data: CommonResult
+  error: Error
+}
+
+input addBankSummaryInApplicationInput {
+  accountNo: String
+  banks: BankInfoInput
+  clientId: String
+  initId: Int
+}
+
+type addBankSummaryInApplicationOutput {
+  data: addBankSummaryInApplicationResponse
+  error: Error
+}
+
+type addBankSummaryInApplicationResponse {
+  result: addBankSummaryInApplicationResponseResult
+}
+
+type addBankSummaryInApplicationResponseResult {
+  accountNo: String
+  banks: BankInfoResponse
+  clientId: String
+  initId: Int
+  message: String
+}
+
+input clientExist {
+  id: String
+}
+
+input clientStatusInput {
+  agentId: String
+  principalHolder: PrincipalInput
+}
+
+input email {
+  clientId: String
+  jointHolder: CommonEmail
+  principalHolder: CommonEmail
+}
+
+type etbCheck {
+  data: EtbCheckResult
+  error: Error
+}
+
+input etbCheckV2Input {
+  checkType: String
+  country: String
+  dateOfBirth: String
+  id: String
+  idType: String
+  name: String
+}
+
+input getReceiptSummaryListInput {
+  clientId: String
+}
+
+type getReceiptSummaryListOutput {
+  data: GetReceiptSummaryListOutputResult
+  error: Error
+}
+
+input investorAccountDetailsInput {
+  accountNumber: String
+  clientId: String
+  transactionType: String
+}
+
+input otp {
+  code: Int
+  nric: String
+}
+
+input register {
+  accountType: String
+  agentId: String
+  jointHolder: JointHolderInput
+  principalHolder: PrincipalHolderInput
+}
+
+type registerClient {
+  data: RegisterClientResult
+  error: Error
+}
+
+input risk {
+  clientId: String
+  riskAssessment: Assessment
+}
+
+type riskcalculation {
+  data: RiskAssessmentResult
+  error: Error
+}
+
+input submitCrInput {
+  clientId: String
+  clientInfo: ClienInfoInput
+  id: String
+  initId: String
+}
+
+input submitPdfInput {
+  clientId: String
+  documents: [PdfDocument]
+}
+
+input submitPdfTransactionsInput {
+  clientId: String
+  documents: [PdfDocumentTransactions]
+  initId: String
+  isConfirmed: String
+  isEtb: Boolean
+  isForceUpdate: Boolean
+  transactionType: String
+}
+
+input summaryReceiptInput {
+  all: String
+  orders: [String]
+}
+
+type summaryReceiptOutput {
+  data: SummaryReceiptOutputResult
+  error: Error
+}
+
+input verifyOtp {
+  clientId: String
+  jointHolder: CommonOtpInput
+  principalHolder: CommonOtpInput
+}
