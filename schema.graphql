@@ -357,6 +357,12 @@ type AmlaTitle {
   user: String
 }
 
+type ApplicationConfigData {
+  data: [String]
+  name: String
+  version: Int
+}
+
 input Assessment {
   questionEight: Int
   questionFive: Int
@@ -1196,6 +1202,15 @@ type FundListResponse {
 
 type FundListResult {
   result: [FundList]
+}
+
+type GetApplicationConfig {
+  data: GetApplicationConfigResult
+  error: Error
+}
+
+type GetApplicationConfigResult {
+  result: [ApplicationConfigData]
 }
 
 type GetCaseOutput {
@@ -2228,6 +2243,7 @@ type Query {
   etbCheckV2(input: etbCheckV2Input): EtbCheckV2Output
   fundDetails(input: InputFundDetails): FundDetailsDashboard
   getAllBanksInAccount(input: BankInfoInput): BankInfoDtoResult
+  getApplicationConfig: GetApplicationConfig
   getDocuments(input: GetDocumentInput): GetDocuments
   getInbox(input: InboxInput): GetInbox
   getOrderSummary(input: OrderSummaryInput): OrderSummaryOutput
